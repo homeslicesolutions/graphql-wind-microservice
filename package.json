@@ -1,0 +1,84 @@
+{
+  "name": "Confirmit.Action.Client",
+  "version": "0.0.1",
+  "description": "Action Client Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon --watch ./ ./scripts/start",
+    "test": "node ./gateway/scripts/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://stashosl.firmglobal.com/scm/am/confirmit.action.client.git"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "co": "^4.6.0",
+    "cookie": "^0.3.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.1",
+    "csurf": "^1.9.0",
+    "express": "^4.15.2",
+    "isomorphic-fetch": "^2.2.1",
+    "jsonfile": "^2.4.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "qs": "^6.4.0",
+    "request": "^2.81.0",
+    "sanitize-html": "^1.14.1",
+    "uuid": "^3.0.1"
+  },
+  "devDependencies": {
+    "caroline": "0.0.2",
+    "copy-webpack-plugin": "^4.0.1",
+    "dotenv": "^4.0.0",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-flowtype": "^2.30.2",
+    "eslint-plugin-import": "^2.2.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^20.0.0",
+    "jest-cli": "^20.0.0",
+    "jsdom": "^10.1.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^3.2.0",
+    "mockery": "^2.0.0",
+    "nock": "^9.0.13",
+    "node-mocks-http": "^1.6.1",
+    "nodemon": "^1.11.0",
+    "rewire": "^2.5.2",
+    "supertest": "^3.0.0"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>[/\\\\](build|docs|node_modules)[/\\\\]",
+      "<rootDir>/app[/\\\\](config|scripts)[/\\\\]"
+    ],
+    "testEnvironment": "node",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/__tests__/"
+    ],
+    "coverageReporters": [
+      "html",
+      "text"
+    ],
+    "moduleNameMapper": {
+      "components(.*)$": "<rootDir>/src/components$1",
+      ".+\\.(svg|css|scss)$": "identity-obj-proxy"
+    },
+    "testResultsProcessor": "jest-teamcity-reporter",
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/enzyme-to-json/serializer"
+    ]
+  }
+}

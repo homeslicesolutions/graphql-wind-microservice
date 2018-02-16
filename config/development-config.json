@@ -1,0 +1,28 @@
+{
+  "Application.Name": "Actions",
+  "Application.ServiceName": "Confirmit.Action.Client",
+  "Application.ServerPort": 8001,
+  "Application.SiteRoot": "/actions",
+  "Application.AssetsRoot": "http://localhost:2991",
+
+  "Application.EnableLogToConsole": true,
+  "Application.DisableLogColors": false,
+
+  "Application.UserSettings": "http://localhost/confirm/authoring/Confirmit.aspx?loc=usersettings",
+  "Application.Url.Login": "http://localhost/confirm/authoring/Login.aspx?ReturnUrl={url}",
+  "Application.Url.Logout": "http://localhost/confirm/authoring/Logoff.aspx?logoff=true&ReturnUrl={url}",
+
+  "Confirmit.Site.LogPath": "./logs",
+  "Confirmit.Site.Url.DictionaryRestApi": "http://localhost/api",
+  "Confirmit.Site.IdentityDomain": "localhost",
+  "Confirmit.Site.SSLEnabled": false,
+
+  "Confirmit.Client.Url.EndUserPortal": "http://localhost/reportal/LandingPage.aspx",
+  "Confirmit.Client.Url.ActionManagement": "http://localhost:8081",
+  "Confirmit.Client.Url.StrategyPlanning": "http://localhost:9091/strategyplanning",
+  "Confirmit.Client.Url.ActiveDashboards": "http://localhost:8000/dashboard",
+
+  "Octopus.Action.Package.NuGetPackageVersion": "(default)",
+  "clientId": "Confirmit.Action.Client",
+  "clientSecret": "3vmUpMuwdUUvVD2bjPGDJP7og0meoqFNatdQwzBPIbc="
+}

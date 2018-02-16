@@ -1,0 +1,9 @@
+{
+  "Application.Name": "Node Express Rest API Boilerplate",
+  "Application.ServiceName": "node-express-rest-api-boilerplate",
+  "Application.SiteRoot": "/",
+  "Application.ServerPort": 8001,
+
+  "Application.EnableLogToConsole": true,
+  "Application.DisableLogColors": false
+}

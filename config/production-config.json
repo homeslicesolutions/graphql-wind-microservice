@@ -1,0 +1,21 @@
+{
+  "Application.Name": "Actions",
+  "Application.ServiceName": "Confirmit.Action.Client",
+  "Application.SiteRoot": "/actions",
+  "Application.EnableLogToConsole": false,
+  "Application.DisableLogColors": true,
+  "Application.UserSettings": "//#{Confirmit.Site.HostName.Authoring}/confirm/authoring/Confirmit.aspx?loc=usersettings",
+  "Application.Url.Login": "//#{Confirmit.Site.HostName.Reportal}/reportal/Login.aspx?ReturnUrl={url}",
+  "Application.Url.Logout": "//#{Confirmit.Site.HostName.Reportal}/reportal/Logoff.aspx?logoff=true&ReturnUrl={url}",
+  "Confirmit.Site.LogPath": "#{Confirmit.Site.LogPath | JsonEscape}",
+  "Confirmit.Site.Url.DictionaryRestApi": "#{Confirmit.Site.Url.DictionaryRestApi}",
+  "Confirmit.Site.IdentityDomain": "#{Confirmit.Site.HostName.Authoring}",
+  "Confirmit.Site.SSLEnabled": "#{Confirmit.Site.SSLEnabled}",
+  "Confirmit.Site.HostName.Authoring": "//#{Confirmit.Site.HostName.Authoring}",
+  "Confirmit.Site.HostName.Reportal": "//#{Confirmit.Site.HostName.Reportal}",
+  "Confirmit.Client.Url.EndUserPortal": "//#{Confirmit.Site.HostName.Reportal}/reportal/LandingPage.aspx",
+  "Confirmit.Client.Url.StrategyPlanning": "//#{Confirmit.Site.HostName.Authoring}/strategyplanning",
+  "Octopus.Action.Package.NuGetPackageVersion": "#{Octopus.Action.Package.NuGetPackageVersion}",
+  "clientId": "Confirmit.Action.Client",
+  "clientSecret": ""
+}

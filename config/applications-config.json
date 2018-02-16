@@ -1,0 +1,12 @@
+{
+  "Confirmit.Client.Url.ActionManagement"     : "https://am.dv1.rnd.int",
+  "Confirmit.Client.Url.StrategyPlanning"     : "http://author.dv1.rnd.int/strategyplanning",
+  "Confirmit.Client.Url.ActiveDashboards"     : "https://ad.dv1.rnd.int/dashboards",
+  "Confirmit.Client.Url.DiscoveryAnalytics"   : "http://reportal.dv1.rnd.int/discoveryanalytics",
+  "Confirmit.Client.Url.EndUserManagement"    : "http://author.dv1.rnd.int/confirm/authoring/Confirmit.aspx?loc=endusers",
+  "Confirmit.Client.Url.HierarchyManagement"  : "http://author.dv1.rnd.int/hierarchymanagement",
+  "Confirmit.Client.Url.ProfessionalAuthoring": "http://author.dv1.rnd.int/confirm/authoring",
+  "Confirmit.Client.Url.Reportal"             : "http://reportal.dv1.rnd.int/reportal",
+  "Confirmit.Client.Url.EndUserPortal"        : "http://reportal.dv1.rnd.int/reportal/LandingPage.aspx",
+  "Confirmit.Client.Url.SmartHub"             : "http://author.dv1.rnd.int/hub"
+}
