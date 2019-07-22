@@ -1,10 +1,10 @@
 {
-  "Application.Name": "Node Express Rest API Boilerplate",
-  "Application.ServiceName": "node-express-rest-api-boilerplate",
+  "Application.Name": "Graph QL with rome",
+  "Application.ServiceName": "graph-ql-with-rome",
   "Application.SiteRoot": "/",
-  "Application.ServerPort": 80,
+  "Application.ServerPort": 3001,
   "Application.SSL": false,
-
+  "Application.Wind.Server": "http://staging-rome-blue.herokuapp.com",
   "Application.EnableLogToConsole": true,
   "Application.DisableLogColors": false
 }

@@ -1,8 +1,3 @@
-'use strict';
-
-const path                = require('path');
-const fs                  = require('fs');
-const https               = require('https');
 const gatewayServer       = require('./lib/gateway-server');
 const logger              = require('./lib/gateway-logger');
 const processErrorHandler = require('./lib/process-error-handler');
