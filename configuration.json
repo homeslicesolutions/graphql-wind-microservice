@@ -1,6 +1,6 @@
 {
   "Application.Name": "Graph QL with rome",
-  "Application.ServiceName": "graph-ql-with-rome",
+  "Application.ServiceName": "graphql-wind-microservice",
   "Application.SiteRoot": "/",
   "Application.ServerPort": 3001,
   "Application.SSL": false,
