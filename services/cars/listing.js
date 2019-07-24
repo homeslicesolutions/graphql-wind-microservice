@@ -1,8 +1,8 @@
 const backend = require('../../lib/backend');
 
 // ASYNC METHODS (PROMISES)
-const listCars = (req) => {
-  return backend.get(req, 'http://localhost:3001/wind/v1/cars', {
+const listCars = () => {
+  return backend.get('http://localhost:3001/wind/v1/cars', {
       limit:    20,
       offset:   0,
       statuses: ['inventory', 'ready'],
@@ -17,7 +17,7 @@ const listCars = (req) => {
 };
 
 const listCarsByRegionLabel = (regionLabel) => {
-  return backend.get(null, 'http://localhost:3001/wind/v1/cars', {
+  return backend.get('http://localhost:3001/wind/v1/cars', {
       limit:    20,
       offset:   0,
       region:   regionLabel,
@@ -31,7 +31,7 @@ const listCarsByRegionLabel = (regionLabel) => {
 }
 
 const getCar = (id) => {
-  return backend.get(null, `http://localhost:3001/wind/v1/cars/${id}`)
+  return backend.get(`http://localhost:3001/wind/v1/cars/${id}`)
     .then(r => r.json())
     .then(car => ({
       id: car.id,

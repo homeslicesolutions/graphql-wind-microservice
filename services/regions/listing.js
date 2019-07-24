@@ -1,8 +1,8 @@
 const backend = require('../../lib/backend');
 
 // ASYNC METHODS (PROMISES)
-const listRegions = (req) => {
-  return backend.get(req, 'http://localhost:3001/wind/v1/regions')
+const listRegions = () => {
+  return backend.get('http://localhost:3001/wind/v1/regions')
     .then((r) => r.json())
     .then(regions => regions.data.map(region => ({
       id: region.id,
@@ -12,7 +12,7 @@ const listRegions = (req) => {
 };
 
 const getRegion = (id) => {
-  return backend.get(req, `http://localhost:3001/wind/v1/regions/${id}`)
+  return backend.get(`http://localhost:3001/wind/v1/regions/${id}`)
     .then(r => r.json())
     .then(region => ({
       id: region.id,
