@@ -1,0 +1,11 @@
+type Car {
+  id: ID!
+  make: String
+  model: String
+  model_year: String!
+}
+
+extend type Query {
+  cars: [Car]
+  car(id: ID!): Car
+}

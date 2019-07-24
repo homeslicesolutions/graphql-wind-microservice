@@ -1,0 +1,12 @@
+type Region {
+  id: ID!
+  label: String!
+  state: String!
+  selectable: Boolean!
+  cars: [Car]
+}
+
+extend type Query {
+  regions: [Region]
+  region(label: String!, id: ID): Region
+}
