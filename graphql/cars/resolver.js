@@ -1,22 +1,25 @@
 const { 
   listCars,
   getCar,
-  getFromDeepLink,
 } = require('../../services/cars/get');
+
+const { 
+  getLinkItem,
+} = require('../../services/links/get');
 
 module.exports = {
   Query: {
-    async cars() {
-      return await listCars();
+    cars: () => {
+      return listCars();
     },
-
-    async car(_, { id }) {
-      return await getCar(id);
+    
+    car: (_, { id }) => {
+      return getCar(id);
     },
   },
   Car: {
-    region: async ({ region }) => {
-      return await getFromDeepLink(region);
+    region: ({ region }) => {
+      return getLinkItem(region.links.related);
     },
   },
 }

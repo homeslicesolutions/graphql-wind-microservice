@@ -29,17 +29,9 @@ const getCar = (id) => {
     .then(car => parseAttributes(car.data));
 };
 
-const getFromDeepLink = async (model) => {
-  const attrs = await backend.get(`http://localhost:3001${model.links.related}`)
-    .then(r => r.json())
-    .then(region => parseAttributes(region.data));
-  return attrs;
-};
-
 // EXPORT
 module.exports = { 
   listCars,
   listCarsByRegionLabel,
-  getFromDeepLink,
-  getCar
+  getCar,
 };

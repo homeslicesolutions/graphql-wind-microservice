@@ -1,5 +1,6 @@
+const DataLoader = require('dataloader');
 const backend = require('../../lib/backend');
-const { parseAttributes, camelizeKeys } = require('../../utils/json-api-helpers');
+const { parseAttributes } = require('../../utils/json-api-helpers');
 
 // ASYNC METHODS (PROMISES)
 const listRegions = () => {
@@ -8,7 +9,11 @@ const listRegions = () => {
     .then(regions => regions.data.map(parseAttributes));
 };
 
-const getRegion = (id) => {
+const listRegionsByIds = async (ids) => {
+  return Promise.all(ids.map(id => fetchRegion(id)));
+}
+
+const fetchRegion = (id) => {
   return backend.get(`http://localhost:3001/wind/v1/regions/${id}`)
     .then(r => r.json())
     .then(region => parseAttributes(region.data));
@@ -19,9 +24,18 @@ const getRegionByLabel = async (label) => {
   return regions.find(region => region.label === label);
 };
 
+// LOADER
+const regionLoader = new DataLoader(listRegionsByIds);
+
+const getRegion = (id) => { 
+  return regionLoader.load(id);
+}
+
 // EXPORT
 module.exports = {
   listRegions,
+  listRegionsByIds,
+  fetchRegion,
   getRegion,
-  getRegionByLabel
+  getRegionByLabel,
 };
