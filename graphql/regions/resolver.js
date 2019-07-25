@@ -2,11 +2,11 @@ const {
   listRegions,
   getRegion,
   getRegionByLabel
-} = require('../../services/regions/listing');
+} = require('../../services/regions/get');
 
 const {
   listCarsByRegionLabel
-} = require('../../services/cars/listing');
+} = require('../../services/cars/get');
 
 module.exports = {
   Query: {

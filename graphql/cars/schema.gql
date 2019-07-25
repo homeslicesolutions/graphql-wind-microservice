@@ -1,8 +1,9 @@
 type Car {
   id: ID!
-  make: String
-  model: String
-  model_year: String!
+  make: String!
+  model: String!
+  modelYear: Int!
+  region: Region!
 }
 
 extend type Query {

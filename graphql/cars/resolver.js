@@ -1,7 +1,8 @@
 const { 
   listCars,
-  getCar
-} = require('../../services/cars/listing');
+  getCar,
+  getFromDeepLink,
+} = require('../../services/cars/get');
 
 module.exports = {
   Query: {
@@ -11,6 +12,11 @@ module.exports = {
 
     async car(_, { id }) {
       return await getCar(id);
+    },
+  },
+  Car: {
+    region: async ({ region }) => {
+      return await getFromDeepLink(region);
     },
   },
 }
