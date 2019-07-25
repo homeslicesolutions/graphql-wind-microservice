@@ -8,5 +8,5 @@ type Region {
 
 extend type Query {
   regions: [Region]
-  region(label: String!, id: ID): Region
+  region(label: String, id: ID): Region
 }

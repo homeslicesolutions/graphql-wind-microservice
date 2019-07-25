@@ -1,9 +1,11 @@
 const backend = require('../../lib/backend');
 const { parseAttributes } = require('../../utils/json-api-helpers');
 
-// ASYNC METHODS (PROMISES)
-const listCars = () => {
-  return backend.get('http://localhost:3001/wind/v1/cars', {
+// FETCH METHODS
+const getCars = (ctx) => {
+  const { baseUrl, req } = ctx;
+
+  return backend.get(req, `${baseUrl}/wind/v1/cars`, {
       limit:    20,
       offset:   0,
       statuses: ['inventory', 'ready'],
@@ -13,8 +15,10 @@ const listCars = () => {
     .then(cars => cars.data.map(parseAttributes));
 };
 
-const listCarsByRegionLabel = (regionLabel) => {
-  return backend.get('http://localhost:3001/wind/v1/cars', {
+const getCarsByRegionLabel = (ctx, regionLabel) => {
+  const { baseUrl, req } = ctx;
+
+  return backend.get(req, `${baseUrl}/wind/v1/cars`, {
       limit:    20,
       offset:   0,
       region:   regionLabel,
@@ -23,15 +27,17 @@ const listCarsByRegionLabel = (regionLabel) => {
     .then(cars => cars.data.map(parseAttributes));
 }
 
-const getCar = (id) => {
-  return backend.get(`http://localhost:3001/wind/v1/cars/${id}`)
+const getCar = (ctx, id) => {
+  const { baseUrl, req } = ctx;
+
+  return backend.get(req, `${baseUrl}/wind/v1/cars/${id}`)
     .then(r => r.json())
     .then(car => parseAttributes(car.data));
 };
 
 // EXPORT
 module.exports = { 
-  listCars,
-  listCarsByRegionLabel,
+  getCars,
+  getCarsByRegionLabel,
   getCar,
 };

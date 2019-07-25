@@ -1,30 +1,30 @@
 const {
-  listRegions,
   getRegion,
+  getRegions,
   getRegionByLabel
 } = require('../../services/regions/get');
 
 const {
-  listCarsByRegionLabel
+  getCarsByRegionLabel
 } = require('../../services/cars/get');
 
 module.exports = {
   Query: {
-    regions: async () => {
-      return await listRegions();
+    regions: (root, args, ctx) => {
+      return getRegions(ctx);
     },
-    region: async (_, { id, label }) => {
+    region: (root, { id, label }, ctx) => {
       if (id) {
-        return await getRegion(id);
+        return getRegion(ctx, id);
       }
       if (label) {
-        return await getRegionByLabel(label);
+        return getRegionByLabel(ctx, label);
       }
     }
   },
   Region: {
-    cars: async ({ label }) => {
-      return await listCarsByRegionLabel(label);
+    cars: ({ label }, args, ctx) => {
+      return getCarsByRegionLabel(ctx, label);
     }
   },
 }

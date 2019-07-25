@@ -1,5 +1,5 @@
 const { 
-  listCars,
+  getCars,
   getCar,
 } = require('../../services/cars/get');
 
@@ -9,17 +9,17 @@ const {
 
 module.exports = {
   Query: {
-    cars: () => {
-      return listCars();
+    cars: (root, args, ctx) => {
+      return getCars(ctx);
     },
     
-    car: (_, { id }) => {
-      return getCar(id);
+    car: (_, { id }, ctx) => {
+      return getCar(ctx, id);
     },
   },
   Car: {
-    region: ({ region }) => {
-      return getLinkItem(region.links.related);
+    region: ({ region }, args, ctx) => {
+      return getLinkItem(ctx, region.links.related);
     },
   },
 }
