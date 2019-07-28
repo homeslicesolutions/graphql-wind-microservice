@@ -13,7 +13,9 @@ module.exports = {
     regions: (root, args, ctx) => {
       return getRegions(ctx);
     },
-    region: (root, { id, label }, ctx) => {
+    region: (root, args, ctx) => {
+      const { id, label } = args;
+
       if (id) {
         return getRegion(ctx, id);
       }
@@ -23,7 +25,8 @@ module.exports = {
     }
   },
   Region: {
-    cars: ({ label }, args, ctx) => {
+    cars: (root, args, ctx) => {
+      const { label } = root;
       return getCarsByRegionLabel(ctx, label);
     }
   },
